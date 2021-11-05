@@ -4,7 +4,7 @@ services:
   postgres:
     image: postgres:12-alpine
     volumes:
-      - /var/lib/postgresql/data
+      - /var/lib/postgres-data:/var/lib/postgresql/data
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
@@ -15,7 +15,7 @@ services:
       args:
         - cachet_ver=2.4
     ports:
-      - 80:8000
+      - 8000:8000
     links:
       - postgres:postgres
     environment:
@@ -26,7 +26,7 @@ services:
       - DB_USERNAME=postgres
       - DB_PASSWORD=postgres
       - DB_PREFIX=chq_
-      - APP_KEY=${APP_KEY:-null}
+      - APP_KEY=base64:ghnZ5xQgctz9GIPTan2jqwzU8w7YFWS3mc7zbhxdXGc=
       - APP_LOG=errorlog
       - APP_ENV=${APP_ENV:-production}
       - APP_DEBUG=false
