@@ -31,14 +31,14 @@ services:
       - APP_ENV=${APP_ENV:-production}
       - APP_DEBUG=false
       - DEBUG=false
-	  - MAIL_DRIVER=sendmail
-	  - MAIL_HOST=localhost
-	  - MAIL_PORT=25
-	  - MAIL_USERNAME=null
-	  - MAIL_PASSWORD=null
-	  - MAIL_ADDRESS=noreply@samoffice.com
-	  - MAIL_NAME=Status | SAM Office BV
-	  - MAIL_ENCRYPTION=null
+      - MAIL_DRIVER=sendmail
+      - MAIL_HOST=localhost
+      - MAIL_PORT=25
+      - MAIL_USERNAME=null
+      - MAIL_PASSWORD=null
+      - MAIL_ADDRESS=noreply@samoffice.com
+      - MAIL_NAME=Status | SAM Office BV
+      - MAIL_ENCRYPTION=null
     depends_on:
       - postgres
     restart: always
